@@ -9,7 +9,7 @@ class App extends Component {
       city: "",
       state: "",
       zip: "",
-      zillowObject: null;
+      zillowObject: null
     };
     this.onAddressChange = this.onAddressChange.bind(this);
     this.onCityChange = this.onCityChange.bind(this);
@@ -53,18 +53,29 @@ class App extends Component {
     proto_uri += `citystatezip=${cityStateZipQuery}`;
 
     let uri=encodeURI(proto_uri);
+    let myHeader = new Headers({
+      'Access-Control-Allow-Origin':'*',
+      'Content-Type':'application/xml'
+     })
 
     let zillowResponse;
 
     let parseString = require('xml2js').parseString;
 
     fetch(uri)
-      .then(response => response.text())
+      .then(response => {
+        debugger;
+        console.log("WHY")})
       .then(xmlObject => {
+        debugger;
         parseString(xmlObject, function(err,result) {
-          zillowResponse = result["SearchResults:searchresults"]["response"][0]["results"][0]["result"][0]
-          this.setState({ zillowObject: zillowResponse })
+          zillowResponse = result["SearchResults:searchresults"]["response"][0]["results"][0]["result"][0];
+          this.setState({ zillowObject: zillowResponse });
         });
+      })
+      .then(data => {
+        debugger;
+        console.log(data);
       });
 
   }
