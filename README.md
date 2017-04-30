@@ -3,5 +3,7 @@ This is a quick little side project that takes advantage of the Zillow API. Appa
 
 Run the following commands to get started.
 
-`bundle install`
-`ruby server.rb`
+```
+$ bundle install
+$ ruby server.rb
+```
