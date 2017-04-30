@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'sinatra'
 gem 'sinatra-activerecord'
+gem 'crack'
 
 group :development, :test do
   gem 'pry'
