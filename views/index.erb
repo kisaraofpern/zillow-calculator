@@ -4,27 +4,44 @@
   <input
     type="text"
     id="address"
-    name="address"/>
+    name="address"
+    value= "<%= @params['address'] %>"
+  >
+  <br/>
 
   <label for="City">City</label>
   <input
     type="text"
     id="city"
     name="city"
-  />
+    value= "<%= @params['city'] %>"
+  >
+  <br/>
 
   <label for="State">State</label>
   <input
     type="state"
     id="state"
     name="state"
-  />
+    value= "<%= @params['state'] %>"
+  >
+  <br/>
 
   <label for="Zip">Zip Code</label>
   <input
     type="text"
     id="zip"
-    name="zip"/>
+    name="zip"
+    value= "<%= @params['zip'] %>"
+  >
+  <br/>
+
   <input type="submit" value="Submit" />
-  
+
 </form>
+
+<% if @param_errors %>
+  <% @param_errors.each do |error| %>
+    <li> <%= error %> </li>
+  <% end %>
+<% end %>

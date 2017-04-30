@@ -1,39 +1,43 @@
 <h1>Results</h1>
 
-<p>These are the data for your search!</p>
+<% if @error %>
+  <p><%= @error %></p>
+<% else %>
+  <p>These are the data for your search!</p>
 
-<p>The full address for your search:</br>
-  <strong>Street:</strong> <%= @zillowData["address"]["street"] %></br>
-  <strong>City:</strong> <%= @zillowData["address"]["city"] %></br>
-  <strong>State:</strong> <%= @zillowData["address"]["state"] %></br>
-  <strong>Zip Code:</strong> <%= @zillowData["address"]["zipcode"] %></br>
-  <strong>Latitude:</strong> <%= @zillowData["address"]["latitude"] %></br>
-  <strong>Longitude:</strong> <%= @zillowData["address"]["longitude"] %></br>
-  <strong>Zillow Property ID:</strong> <%= @zillowData["zpid"] %></br>
-</p>
+  <p>The full address for your search:</br>
+    <strong>Street:</strong> <%= @zillowData["address"]["street"] %></br>
+    <strong>City:</strong> <%= @zillowData["address"]["city"] %></br>
+    <strong>State:</strong> <%= @zillowData["address"]["state"] %></br>
+    <strong>Zip Code:</strong> <%= @zillowData["address"]["zipcode"] %></br>
+    <strong>Latitude:</strong> <%= @zillowData["address"]["latitude"] %></br>
+    <strong>Longitude:</strong> <%= @zillowData["address"]["longitude"] %></br>
+    <strong>Zillow Property ID:</strong> <%= @zillowData["zpid"] %></br>
+  </p>
 
-<p>Zillow Estimate:</br>
-  <strong>Amount:</strong> <%= @zillowData["zestimate"]["amount"] %></br>
-  <strong>Last Updated:</strong> <%= @zillowData["zestimate"]["last_updated"] %></br>
-  <strong>One Week Change:</strong> <%= @zillowData["zestimate"]["oneWeekChange"] %></br>
-  <strong>Value Change:</strong> <%= @zillowData["zestimate"]["valueChange"]["deprecated"] %></br>
-  <strong>Valuation Range:</strong> <%= @zillowData["zestimate"]["valuationRange"]["low"] %> - <%= @zillowData["zestimate"]["valuationRange"]["high"] %></br>
-  <strong>Percentile:</strong> <%= @zillowData["zestimate"]["percentile"] %></br>
-</p>
+  <p>Zillow Estimate:</br>
+    <strong>Amount:</strong> <%= @zillowData["zestimate"]["amount"] %></br>
+    <strong>Last Updated:</strong> <%= @zillowData["zestimate"]["last_updated"] %></br>
+    <strong>One Week Change:</strong> <%= @zillowData["zestimate"]["oneWeekChange"] %></br>
+    <strong>Value Change:</strong> <%= @zillowData["zestimate"]["valueChange"]["deprecated"] %></br>
+    <strong>Valuation Range:</strong> <%= @zillowData["zestimate"]["valuationRange"]["low"] %> - <%= @zillowData["zestimate"]["valuationRange"]["high"] %></br>
+    <strong>Percentile:</strong> <%= @zillowData["zestimate"]["percentile"] %></br>
+  </p>
 
-<p>Links to Zillow:</br>
-  <a href= <%= @zillowData["links"]["homedetails"] %> target="_blank">Home Details</a></br>
-  <a href= <%= @zillowData["links"]["mapthishome"] %> target="_blank">Map This Home</a></br>
-  <a href= <%= @zillowData["links"]["comparables"] %> target="_blank">Comparables</a></br>
-</p>
+  <p>Links to Zillow:</br>
+    <a href= <%= @zillowData["links"]["homedetails"] %> target="_blank">Home Details</a></br>
+    <a href= <%= @zillowData["links"]["mapthishome"] %> target="_blank">Map This Home</a></br>
+    <a href= <%= @zillowData["links"]["comparables"] %> target="_blank">Comparables</a></br>
+  </p>
 
-<p>Information about the Local Real Estate:</br>
-  <strong>Region:</strong> <%= @zillowData["localRealEstate"]["region"]["name"] %><br/>
-  <strong>ID:</strong> <%= @zillowData["localRealEstate"]["region"]["id"] %><br/>
-  <strong>Z-Index Value:</strong> <%= @zillowData["localRealEstate"]["region"]["zindexValue"] %></br>
-  <a href= <%= @zillowData["localRealEstate"]["region"]["overview"] %> target="_blank">Overview</a></br>
-  <a href= <%= @zillowData["localRealEstate"]["region"]["forSaleByOwner"] %> target="_blank">For Sale By Owner</a></br>
-  <a href= <%= @zillowData["localRealEstate"]["region"]["forSale"] %> target="_blank">For Sale</a></br>
-</p>
+  <p>Information about the Local Real Estate:</br>
+    <strong>Region:</strong> <%= @zillowData["localRealEstate"]["region"]["name"] %><br/>
+    <strong>ID:</strong> <%= @zillowData["localRealEstate"]["region"]["id"] %><br/>
+    <strong>Z-Index Value:</strong> <%= @zillowData["localRealEstate"]["region"]["zindexValue"] %></br>
+    <a href= <%= @zillowData["localRealEstate"]["region"]["overview"] %> target="_blank">Overview</a></br>
+    <a href= <%= @zillowData["localRealEstate"]["region"]["forSaleByOwner"] %> target="_blank">For Sale By Owner</a></br>
+    <a href= <%= @zillowData["localRealEstate"]["region"]["forSale"] %> target="_blank">For Sale</a></br>
+  </p>
+<% end %>
 
 <a href='/'>Do Another Search!</a>
